@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {PriceQuote} from "./price-quote/price-quote.component";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  title = 'input-output-demo';
+
+  stock = '';
+
+  priceQuote: PriceQuote = new PriceQuote('', 0);
+
+  priceQuoteHandler(priceQuote: PriceQuote) {
+    this.priceQuote = priceQuote;
+  }
+
+  buyHandler(priceQuote: PriceQuote) {
+    this.priceQuote = priceQuote;
+  }
+
 }
